@@ -7,9 +7,11 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "dev": "tsup -- dev",
+    "start": "node dist/server.js",
     "build": "tsup",
     "db:migrate": "npx drizzle-kit migrate",
-    "db:generate": "npx drizzle-kit generate"
+    "db:generate": "npx drizzle-kit generate",
+    "db:create": "mkdir database && touch database/sqlite.db"
   },
   "keywords": [],
   "author": "",
