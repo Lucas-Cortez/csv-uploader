@@ -14,5 +14,7 @@ export const useSearchUser = (term?: string) => {
   return useQuery<IUser[]>({
     queryKey: ["search-user", term],
     queryFn: () => searchUser(term),
+    retryDelay: 10000,
+    retry: 6,
   });
 };

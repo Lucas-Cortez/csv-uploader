@@ -37,4 +37,12 @@ describe("CardsList component", () => {
     const dataCards = screen.getAllByTestId("info-card");
     expect(dataCards.length).toBe(users.length);
   });
+
+  it("should render 'No data found' when users is empty", () => {
+    const isLoading = false;
+    render(<CardsList isLoading={isLoading} users={[]} />);
+
+    const text = screen.getByText("No data found");
+    expect(text).toBeInTheDocument();
+  });
 });

@@ -8,7 +8,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [term, setTerm] = useState<string>("");
 
-  const { data, isLoading } = useSearchUser(term);
+  const { data, isLoading, error } = useSearchUser(term);
   const { mutate } = useUploadFile();
 
   const searchUser = useCallback(
@@ -33,6 +33,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = ({
         isLoading,
         searchUser,
         uploadFile,
+        error,
       }}
     >
       {children}

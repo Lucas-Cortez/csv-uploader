@@ -5,6 +5,7 @@ type UserContextType = {
   users: IUser[];
   term: string;
   isLoading: boolean;
+  error: Error | null;
   searchUser: (term: string) => Promise<void>;
   uploadFile: (file: File) => Promise<void>;
 };
